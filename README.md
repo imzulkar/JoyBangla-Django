@@ -1,36 +1,10 @@
 <div align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
 ![Oxygen - An API Ready starter boilerplate with Django and Django Rest Framework](https://img.icons8.com/external-flaticons-lineal-color-flat-icons/256/FA5252/external-oxygen-diving-flaticons-lineal-color-flat-icons-2.png)
 
-<h1 style="color: #ff56ff;">Oxygen</h1>
+<h1 style="color: #ff56ff;">JoyBangla</h1>
 
 <p style="font-size: 1.5rem">An API Ready starter boilerplate with Django and Django Rest Framework</p>
 
-[![Django Test](https://github.com/nhridoy/oxygen/actions/workflows/django.yml/badge.svg)](https://github.com/nhridoy/oxygen/actions/workflows/django.yml)
-[![Black](https://github.com/nhridoy/oxygen/actions/workflows/black.yml/badge.svg)](https://github.com/nhridoy/oxygen/actions/workflows/black.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/nhridoy/oxygen/blob/main/LICENSE)
-<a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
-![Maintainer](https://img.shields.io/badge/Maintainer-nhridoy-blue)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/y/nhridoy/oxygen)
-![GitHub last commit](https://img.shields.io/github/last-commit/nhridoy/oxygen)
-[![GitHub contributors](https://img.shields.io/github/contributors/nhridoy/oxygen.svg)](https://GitHub.com/nhridoy/oxygen/graphs/contributors/)
-
-[![GitHub forks](https://img.shields.io/github/forks/nhridoy/oxygen.svg?style=social&label=Fork&maxAge=2592000)](https://GitHub.com/nhridoy/oxygen/network/)
-[![GitHub stars](https://img.shields.io/github/stars/nhridoy/oxygen.svg?style=social&label=Star&maxAge=2592000)](https://GitHub.com/nhridoy/oxygennhridoy/oxygen/stargazers/)
-[![GitHub watchers](https://img.shields.io/github/watchers/nhridoy/oxygen.svg?style=social&label=Watch&maxAge=2592000)](https://gitHub.com/nhridoy/oxygen/watchers/)
-
-![Lines of code](https://img.shields.io/tokei/lines/github/nhridoy/oxygen)
-![GitHub repo size](https://img.shields.io/github/repo-size/nhridoy/oxygen)
-
-[![forthebadge](https://forthebadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-
-![Dependabot](https://img.shields.io/badge/dependabot-025E8C?style=for-the-badge&logo=dependabot&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
 </div>
 

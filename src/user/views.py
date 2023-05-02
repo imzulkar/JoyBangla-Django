@@ -35,33 +35,15 @@ class MyTokenObtainPairView(TokenObtainPairView):
         if settings.REST_SESSION_LOGIN:
             login(request, user)
         resp = response.Response()
-        # resp.set_cookie(
-        #     key=settings.JWT_AUTH_REFRESH_COOKIE,
-        #     value=serializer.validated_data[settings.JWT_AUTH_REFRESH_COOKIE],
-        #     httponly=settings.JWT_AUTH_HTTPONLY,
-        #     samesite=settings.JWT_AUTH_SAMESITE,
-        #     expires=(
-        #        timezone.now() + settings.SIMPLE_JWT["REFRESH_TOKEN_LIFETIME"]
-        #   ),
+        # set_jwt_cookies(
+        #     response=resp,
+        #     access_token=serializer.validated_data.get(
+        #         settings.JWT_AUTH_COOKIE
+        #     ),  # noqa
+        #     refresh_token=serializer.validated_data.get(
+        #         settings.JWT_AUTH_REFRESH_COOKIE
+        #     ),
         # )
-        # resp.set_cookie(
-        #     key=settings.JWT_AUTH_COOKIE,
-        #     value=serializer.validated_data[settings.JWT_AUTH_COOKIE],
-        #     httponly=settings.JWT_AUTH_HTTPONLY,
-        #     samesite=settings.JWT_AUTH_SAMESITE,
-        #     expires=(
-        #       timezone.now() + settings.SIMPLE_JWT["ACCESS_TOKEN_LIFETIME"]
-        #   ),
-        # )
-        set_jwt_cookies(
-            response=resp,
-            access_token=serializer.validated_data.get(
-                settings.JWT_AUTH_COOKIE
-            ),  # noqa
-            refresh_token=serializer.validated_data.get(
-                settings.JWT_AUTH_REFRESH_COOKIE
-            ),
-        )
         resp.data = serializer.validated_data
         resp.status_code = status.HTTP_200_OK
         return resp
@@ -210,24 +192,7 @@ class OTPLoginView(views.APIView):
         if settings.REST_SESSION_LOGIN:
             login(request, current_user)
         resp = response.Response()
-        # resp.set_cookie(
-        #     key=settings.JWT_AUTH_REFRESH_COOKIE,
-        #     value=refresh,
-        #     httponly=settings.JWT_AUTH_HTTPONLY,
-        #     samesite=settings.JWT_AUTH_SAMESITE,
-        #     expires=(
-        #       timezone.now() + settings.SIMPLE_JWT["REFRESH_TOKEN_LIFETIME"]
-        #     ),
-        # )
-        # resp.set_cookie(
-        #     key=settings.JWT_AUTH_COOKIE,
-        #     value=refresh.access_token,
-        #     httponly=settings.JWT_AUTH_HTTPONLY,
-        #     samesite=settings.JWT_AUTH_SAMESITE,
-        #     expires=(
-        #       timezone.now() + settings.SIMPLE_JWT["ACCESS_TOKEN_LIFETIME"]
-        #   ),
-        # )
+
         set_jwt_cookies(
             response=resp,
             access_token=refresh.access_token,
@@ -259,13 +224,7 @@ class OTPLoginView(views.APIView):
         print(totp.now())
         if totp.verify(otp):
             return self._otp_login(current_user=current_user, request=request)
-            # return response.Response(
-            #     {
-            #         settings.JWT_AUTH_REFRESH_COOKIE: str(refresh),
-            #         settings.JWT_AUTH_COOKIE: str(refresh.access_token),
-            #     },
-            #     status=status.HTTP_200_OK,
-            # )
+
         else:
             return response.Response(
                 {"detail": "Wrong Token"},
@@ -381,10 +340,7 @@ class QRCreateView(views.APIView):
             print(totp.now())
             self._clear_user_otp(user_otp)
             raise exceptions.NotAcceptable()
-            # return response.Response(
-            #     {"detail": "Not Accepted"},
-            #     status=status.HTTP_406_NOT_ACCEPTABLE,
-            # )
+
 
     def delete(self, request, *args, **kwargs):
         current_user = self.request.user
@@ -403,7 +359,6 @@ class NewUserView(generics.ListCreateAPIView):
     permission_classes = []
     authentication_classes = []
 
-    # permission_classes = [apipermissions.IsSuperUser]
 
     def create(self, request, *args, **kwargs):
         user = request.data
